@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martial Sports Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="text-gray-100 min-h-screen flex items-center justify-center p-8"
+  style="background-image: url(https://images.unsplash.com/photo-1526889588514-2e695856df85?q=80&w=2934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-size: cover;">
+  <div x-data="quizApp()" class="w-96 bg-gray-800 bg-opacity-60 p-6 rounded-lg shadow-xl overflow-auto">
+    <form @submit.prevent="calculateScores" x-show="!showResult">
+      <template x-for="(question, index) in questions" :key="index">
+        <div x-show="step === index + 1" class="">
+          <span class="text-sm mb-1" x-text="`${index + 1} of ${questions.length}`"></span>
+          <label class="block mb-4 text-xl font-bold" x-text="question.text"></label>
+          <template x-for="(choice, idx) in question.choices" :key="idx">
+            <div class="mb-2">
+              <label>
+                <input type="radio" :name="'question' + index" :value="choice.value"
+                  @change="answers[index] = choice.value" class="mr-2">
+                <span x-text="choice.text" class="text-lg"></span>
+              </label>
+            </div>
+          </template>
+          <div class="mt-4">
+            <button type="button" class="px-4 py-2 bg-blue-800 text-white rounded" @click="nextStep()"
+              x-show="index !== questions.length - 1">Next</button>
+            <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded"
+              x-show="index === questions.length - 1">Submit</button>
+          </div>
+        </div>
+      </template>
+    </form>
+
+    <div x-show="showResult"
+      class="flex flex-col justify-center items-center text-center p-4 border border-gray-300 rounded">
+      <h2 class="text-xl font-bold mb-4">Your recommended martial sport is</h2>
+      <template x-for="sport in recommendedSports" :key="sport">
+        <p class="text-lg font-bold uppercase" x-text="sport"></p>
+      </template>
+    </div>
+  </div>
+
+  <script>
+    function quizApp() {
+      return {
+        step: 1,
+        answers: Array(10).fill(null),
+        showResult: false,
+        recommendedSports: [],
+        questions: [
+          {
+            text: 'What is your preferred level of contact?',
+            choices: [
+              { text: 'Light Contact', value: { aikido: 5, taiChi: 4 } },
+              { text: 'Moderate Contact', value: { karate: 4, kendo: 3 } },
+              { text: 'Full Contact', value: { muayThai: 5, boxing: 5, jiuJitsu: 4 } }
+            ]
+          },
+          {
+            text: 'Do you prefer using weapons?',
+            choices: [
+              { text: 'Yes', value: { kendo: 5, aikido: 3 } },
+              { text: 'No', value: { jiuJitsu: 4, karate: 4, kravMaga: 5 } }
+            ]
+          },
+          {
+            text: 'What is your focus?',
+            choices: [
+              { text: 'Self-defense', value: { kravMaga: 5, jiuJitsu: 4 } },
+              { text: 'Physical fitness', value: { muayThai: 5, boxing: 4 } },
+              { text: 'Mental discipline', value: { taiChi: 5, aikido: 4 } }
+            ]
+          },
+          {
+            text: 'Do you prefer striking or grappling?',
+            choices: [
+              { text: 'Striking', value: { karate: 5, muayThai: 5, boxing: 5 } },
+              { text: 'Grappling', value: { jiuJitsu: 5, aikido: 4 } },
+              { text: 'Both', value: { kravMaga: 4, muayThai: 4 } }
+            ]
+          },
+          {
+            text: 'How important is tradition in your training?',
+            choices: [
+              { text: 'Very important', value: { kendo: 5, karate: 4, aikido: 3 } },
+              { text: 'Somewhat important', value: { muayThai: 4, jiuJitsu: 3 } },
+              { text: 'Not important', value: { kravMaga: 5, boxing: 4 } }
+            ]
+          },
+          {
+            text: 'Do you prefer solo practice or partner drills?',
+            choices: [
+              { text: 'Solo practice', value: { taiChi: 5, aikido: 4 } },
+              { text: 'Partner drills', value: { kravMaga: 5, jiuJitsu: 4 } },
+              { text: 'Both', value: { karate: 4, muayThai: 4 } }
+            ]
+          },
+          {
+            text: 'What is your primary goal?',
+            choices: [
+              { text: 'Self-defense', value: { kravMaga: 5, jiuJitsu: 4 } },
+              { text: 'Sport competition', value: { boxing: 5, muayThai: 4 } },
+              { text: 'Spiritual growth', value: { taiChi: 5, aikido: 4 } }
+            ]
+          },
+          {
+            text: 'Do you prefer fast-paced or slow-paced training?',
+            choices: [
+              { text: 'Fast-paced', value: { muayThai: 5, boxing: 4, kravMaga: 4 } },
+              { text: 'Moderate-paced', value: { karate: 4, aikido: 3 } },
+              { text: 'Slow-paced', value: { taiChi: 5, aikido: 4 } }
+            ]
+          },
+          {
+            text: 'How do you feel about physical conditioning?',
+            choices: [
+              { text: 'Essential', value: { boxing: 5, muayThai: 5 } },
+              { text: 'Important, but not the focus', value: { aikido: 4, taiChi: 4 } },
+              { text: 'Not a priority', value: { taiChi: 5 } }
+            ]
+          },
+          {
+            text: 'Do you want to train for competition?',
+            choices: [
+              { text: 'Yes', value: { boxing: 5, muayThai: 5, karate: 4 } },
+              { text: 'No', value: { aikido: 4, taiChi: 4 } },
+              { text: 'Maybe', value: { karate: 4, kravMaga: 4 } }
+            ]
+          }
+        ],
+        nextStep() {
+          if (this.step < this.questions.length) {
+            this.step++;
+          }
+        },
+        calculateScores() {
+          const scores = {
+            aikido: 0,
+            muayThai: 0,
+            kendo: 0,
+            jiuJitsu: 0,
+            kravMaga: 0,
+            karate: 0,
+            boxing: 0,
+            taiChi: 0
+          };
+
+          this.answers.forEach(answer => {
+            for (const [key, value] of Object.entries(answer)) {
+              scores[key] += value;
+            }
+          });
+
+          const maxScore = Math.max(...Object.values(scores));
+          this.recommendedSports = Object.keys(scores).filter(sport => scores[sport] === maxScore);
+
+          this.showResult = true;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
