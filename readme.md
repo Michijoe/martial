@@ -15,11 +15,9 @@ Score Ranges: At the end of the quiz, you can compare the total scores across th
 ## Weighted Scores Based on Importance:
 Use a Weighting Factor: Some questions might be more important than others. For example, if a question about the user's experience level is critical, you could multiply the score from that answer by a weighting factor.
 Dynamic Weighting: You could dynamically adjust weighting based on earlier answers (e.g., if a user indicates a strong preference for contact sports early on).
-Decision Trees:
 
 ## Hierarchical Decision-Making: 
 Instead of a simple point system, you can design a decision tree where each answer leads the user down a path that narrows down the choices. This method is more deterministic and works well if your questions have clear-cut categories.
-Matrix Scoring:
 
 ## Score Matrix: 
 Create a matrix where rows represent questions and columns represent possible answers. Each cell contains a score that contributes to the overall score of each martial art. This method provides fine-grained control over how different answers impact the final recommendation.

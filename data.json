@@ -1,0 +1,262 @@
+{
+  "questions": [
+    {
+      "text": "What is your preferred level of contact?",
+      "choices": [
+        {
+          "text": "Light Contact",
+          "value": {
+            "aikido": 5,
+            "taiChi": 4
+          }
+        },
+        {
+          "text": "Moderate Contact",
+          "value": {
+            "karate": 4,
+            "kendo": 3
+          }
+        },
+        {
+          "text": "Full Contact",
+          "value": {
+            "muayThai": 5,
+            "boxing": 5,
+            "jiuJitsu": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "Do you prefer using weapons?",
+      "choices": [
+        {
+          "text": "Yes",
+          "value": {
+            "kendo": 5,
+            "aikido": 3
+          }
+        },
+        {
+          "text": "No",
+          "value": {
+            "jiuJitsu": 4,
+            "karate": 4,
+            "kravMaga": 5
+          }
+        }
+      ]
+    },
+    {
+      "text": "What is your focus?",
+      "choices": [
+        {
+          "text": "Self-defense",
+          "value": {
+            "kravMaga": 5,
+            "jiuJitsu": 4
+          }
+        },
+        {
+          "text": "Physical fitness",
+          "value": {
+            "muayThai": 5,
+            "boxing": 4
+          }
+        },
+        {
+          "text": "Mental discipline",
+          "value": {
+            "taiChi": 5,
+            "aikido": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "Do you prefer striking or grappling?",
+      "choices": [
+        {
+          "text": "Striking",
+          "value": {
+            "karate": 5,
+            "muayThai": 5,
+            "boxing": 5
+          }
+        },
+        {
+          "text": "Grappling",
+          "value": {
+            "jiuJitsu": 5,
+            "aikido": 4
+          }
+        },
+        {
+          "text": "Both",
+          "value": {
+            "kravMaga": 4,
+            "muayThai": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "How important is tradition in your training?",
+      "choices": [
+        {
+          "text": "Very important",
+          "value": {
+            "kendo": 5,
+            "karate": 4,
+            "aikido": 3
+          }
+        },
+        {
+          "text": "Somewhat important",
+          "value": {
+            "muayThai": 4,
+            "jiuJitsu": 3
+          }
+        },
+        {
+          "text": "Not important",
+          "value": {
+            "kravMaga": 5,
+            "boxing": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "Do you prefer solo practice or partner drills?",
+      "choices": [
+        {
+          "text": "Solo practice",
+          "value": {
+            "taiChi": 5,
+            "aikido": 4
+          }
+        },
+        {
+          "text": "Partner drills",
+          "value": {
+            "kravMaga": 5,
+            "jiuJitsu": 4
+          }
+        },
+        {
+          "text": "Both",
+          "value": {
+            "karate": 4,
+            "muayThai": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "What is your primary goal?",
+      "choices": [
+        {
+          "text": "Self-defense",
+          "value": {
+            "kravMaga": 5,
+            "jiuJitsu": 4
+          }
+        },
+        {
+          "text": "Sport competition",
+          "value": {
+            "boxing": 5,
+            "muayThai": 4
+          }
+        },
+        {
+          "text": "Spiritual growth",
+          "value": {
+            "taiChi": 5,
+            "aikido": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "Do you prefer fast-paced or slow-paced training?",
+      "choices": [
+        {
+          "text": "Fast-paced",
+          "value": {
+            "muayThai": 5,
+            "boxing": 4,
+            "kravMaga": 4
+          }
+        },
+        {
+          "text": "Moderate-paced",
+          "value": {
+            "karate": 4,
+            "aikido": 3
+          }
+        },
+        {
+          "text": "Slow-paced",
+          "value": {
+            "taiChi": 5,
+            "aikido": 4
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you feel about physical conditioning?",
+      "choices": [
+        {
+          "text": "Essential",
+          "value": {
+            "boxing": 5,
+            "muayThai": 5
+          }
+        },
+        {
+          "text": "Important, but not the focus",
+          "value": {
+            "aikido": 4,
+            "taiChi": 4
+          }
+        },
+        {
+          "text": "Not a priority",
+          "value": {
+            "taiChi": 5
+          }
+        }
+      ]
+    },
+    {
+      "text": "Do you want to train for competition?",
+      "choices": [
+        {
+          "text": "Yes",
+          "value": {
+            "boxing": 5,
+            "muayThai": 5,
+            "karate": 4
+          }
+        },
+        {
+          "text": "No",
+          "value": {
+            "aikido": 4,
+            "taiChi": 4
+          }
+        },
+        {
+          "text": "Maybe",
+          "value": {
+            "karate": 4,
+            "kravMaga": 4
+          }
+        }
+      ]
+    }
+  ]
+}
