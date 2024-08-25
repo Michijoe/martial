@@ -1,3 +1,36 @@
+# XLS TO JSON FORMAT
+There are several ways to convert an Excel (XLS) file to a JSON format file. Here are a few approaches:
+
+## Using a Programming Language
+Many programming languages have libraries that can read Excel files and convert them to JSON. For example, in Python, you can use pandas and openpyxl to read the Excel file and json to write the JSON file.
+
+### Install Python and dependencies
+```brew install python3```
+```pip3 install pandas```
+```pip3 install openpyxl```
+
+### Run program
+```python3 xlsTojson.py```
+
+## Using Online Tools
+There are many online tools that can convert Excel files to JSON. You just need to upload your Excel file, and the tool will generate a JSON file that you can download. Examples of such tools include beautifytools.com and convertcsv.com.
+
+## Using Excel Add-ins
+Some Excel add-ins can convert Excel data to JSON. For example, the Excel to JSON Converter add-in can convert Excel data to JSON directly within Excel.
+
+## Using Command Line Tools
+Command line tools like in2csv (part of csvkit) can convert Excel files to CSV, and then jq or csvjson (part of csvkit) can convert CSV to JSON.
+
+```
+# Convert Excel to CSV
+in2csv file.xls > file.csv
+
+# Convert CSV to JSON
+csvjson file.csv > file.json
+```
+
+----
+
 # MARTIALS ARTS ALGORITHM
 Creating an algorithm to determine a recommended martial sport based on user preferences can be approached in various ways. Here’s a breakdown of the approach you’re suggesting and some possible improvements.
 

@@ -9,34 +9,45 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="quizApp.js"></script>
+  <style>
+    [x-cloak] {
+      display: none;
+    }
+
+    body {
+      background-image: url('bg.webp');
+    }
+  </style>
 </head>
 
-<body class="text-gray-100 min-h-screen flex items-center justify-center p-8 bg-cover"
-  style="background-image: url(https://images.unsplash.com/photo-1526889588514-2e695856df85?q=80&w=2934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
-  <div x-cloak x-data="quizApp()" x-init="fetchData()"
+<body class="text-gray-100 min-h-screen flex items-center justify-center p-8 bg-cover">
+  <main x-cloak x-data="quizApp()" x-init="fetchData()"
     class="w-96 bg-gray-800 bg-opacity-60 p-6 rounded-lg shadow-xl overflow-auto">
     <div x-show="welcome" class="flex flex-col gap-4 justify-content align-items">
-      <h2 class="text-2xl font-bold mb-4 text-center">Welcome to the Martial Sports Quiz!</h2>
-      <button type="button" @click="welcome=false" class="px-4 py-2 bg-red-500 text-white rounded">Take the
+      <h1 class="text-2xl font-bold mb-4 text-center">Welcome to the Martial Sports Quiz!</h1>
+      <button type="button" @click="welcome=false"
+        class="px-4 py-2 bg-red-500 text-white rounded text-xl font-bold">Take the
         quiz!</button>
     </div>
-    <form @submit.prevent="calculateScores" x-show="!welcome && !showResult">
+    <form @submit.prevent="calculateWinner" x-show="!welcome && !showResult">
       <template x-for="(question, index) in questions" :key="index">
         <div x-show="step === index + 1" class="">
           <span class="text-sm mb-1" x-text="`${index + 1} of ${questions.length}`"></span>
-          <label class="block mb-4 text-xl font-bold" x-text="question.text"></label>
-          <template x-for="(choice, idx) in question.choices" :key="idx">
-            <div class="mb-2">
-              <label>
-                <input type="radio" :name="'question' + index" :value="choice.value"
-                  @change="answers[index] = choice.value" class="mr-2">
-                <span x-text="choice.text" class="text-lg"></span>
-              </label>
-            </div>
-          </template>
+          <fieldset>
+            <legend x-text="question.text" class="text-xl font-bold mb-4"></legend>
+            <template x-for="(choice, idx) in question.choices" :key="idx">
+              <div class="mb-2">
+                <label :for="'question' + index + 'choice' + idx">
+                  <input type="radio" :id="'question' + index + 'choice' + idx" :name="'question' + index"
+                    :value="choice.value" @change="selectedValues[index] = choice.value" class="mr-2">
+                  <span x-text="choice.text"></span>
+                </label>
+              </div>
+            </template>
+          </fieldset>
           <div class="mt-4">
-            <button :disabled="!answers[index]" type="button" class="px-4 py-2 bg-blue-800 text-white rounded"
-              @click="nextStep()" x-show="index !== questions.length - 1">Next</button>
+            <button type="button" :disabled="!selectedValues[step - 1]" class="px-4 py-2 bg-blue-800 text-white rounded"
+              @click="updateScores(index)" x-show="index !== questions.length - 1">Next</button>
             <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded"
               x-show="index === questions.length - 1">Submit</button>
           </div>
@@ -51,11 +62,7 @@
         <p class="text-lg font-bold uppercase" x-text="sport"></p>
       </template>
     </div>
-  </div>
-
-  <script>
-
-  </script>
+  </main>
 </body>
 
 </html>

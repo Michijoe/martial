@@ -1,0 +1,338 @@
+{
+  "questions": [
+    {
+      "text": "Quel est votre objectif principal ?",
+      "choices": [
+        {
+          "text": "Self-defense",
+          "value": {
+            "Aïkido": 3,
+            "Boxe anglaise": 4,
+            "Boxe française (Savate)": 3,
+            "Capoeira": 1,
+            "Jiu-Jitsu Brésilien": 4,
+            "Judo": 1,
+            "Karate": 2,
+            "Krav Maga": 5,
+            "Kung Fu": 4,
+            "MMA": 2
+          }
+        },
+        {
+          "text": "Condition physique",
+          "value": {
+            "Boxe anglaise": 5,
+            "Boxe française (Savate)": 4,
+            "Capoeira": 5,
+            "Jiu-Jitsu Brésilien": 7,
+            "Judo": 3,
+            "Karate": 78,
+            "Krav Maga": 4,
+            "Kung Fu": 6,
+            "Lutte": 3
+          }
+        },
+        {
+          "text": "Compétition",
+          "value": {
+            "Boxe anglaise": 6,
+            "Boxe française (Savate)": 7,
+            "Capoeira": 5,
+            "Jiu-Jitsu Brésilien": 4,
+            "Judo": 3,
+            "Karate": 3,
+            "Krav Maga": 3,
+            "Kung Fu": 3,
+            "Lutte": 3
+          }
+        },
+        {
+          "text": "Développement personnel",
+          "value": {
+            "Aïkido": 5,
+            "Boxe anglaise": 5,
+            "Boxe française (Savate)": 86,
+            "Capoeira": 7,
+            "Jiu-Jitsu Brésilien": 5,
+            "Judo": 3,
+            "Karate": 4,
+            "Krav Maga": 5,
+            "Kung Fu": 4,
+            "Lutte": 3
+          }
+        }
+      ]
+    },
+    {
+      "text": "Quelle est l'intensité d'effort recherchée",
+      "choices": [
+        {
+          "text": "Faible",
+          "value": {
+            "Aïkido": 5,
+            "Boxe anglaise": 5,
+            "Boxe française (Savate)": 7,
+            "Capoeira": 8,
+            "Jiu-Jitsu Brésilien": 6,
+            "Judo": 4,
+            "Karate": 32,
+            "Krav Maga": 3
+          }
+        },
+        {
+          "text": "Moyenne",
+          "value": {
+            "Aïkido": 3,
+            "Karate": 6,
+            "Krav Maga": 5
+          }
+        },
+        {
+          "text": "Forte",
+          "value": {
+            "Boxe française (Savate)": 4,
+            "Capoeira": 4,
+            "Jiu-Jitsu Brésilien": 4,
+            "Judo": 4,
+            "Karate": 5
+          }
+        }
+      ]
+    },
+    {
+      "text": "Quel niveau de contact recherchez-vous ?",
+      "choices": [
+        {
+          "text": "Peu de contact",
+          "value": {
+            "Aïkido": 3,
+            "Boxe française (Savate)": 66,
+            "Capoeira": 7,
+            "Jiu-Jitsu Brésilien": 5,
+            "Judo": 3,
+            "Krav Maga": 3
+          }
+        },
+        {
+          "text": "Contact moyen",
+          "value": {
+            "Aïkido": 4,
+            "Judo": 6,
+            "Karate": 5,
+            "Krav Maga": 4
+          }
+        },
+        {
+          "text": "Beaucoup de contacts",
+          "value": {
+            "Aïkido": 5,
+            "Capoeira": 5,
+            "Jiu-Jitsu Brésilien": 6,
+            "Judo": 7
+          }
+        }
+      ]
+    },
+    {
+      "text": "Souhaites-tu utiliser des armes",
+      "choices": [
+        {
+          "text": "Oui",
+          "value": {
+            "Aïkido": 5,
+            "Boxe française (Savate)": 3,
+            "Capoeira": 4
+          }
+        },
+        {
+          "text": "Non",
+          "value": {
+            "Boxe française (Savate)": 4,
+            "Capoeira": 5
+          }
+        },
+        {
+          "text": "Peu importe",
+          "value": {
+            "Boxe française (Savate)": 5,
+            "Capoeira": 6
+          }
+        }
+      ]
+    },
+    {
+      "text": "Quel style de combat ",
+      "choices": [
+        {
+          "text": "Percussion",
+          "value": {
+            "Boxe anglaise": 3,
+            "Boxe française (Savate)": 4
+          }
+        },
+        {
+          "text": "Préhension",
+          "value": {
+            "Jiu-Jitsu Brésilien": 5,
+            "Judo": 5,
+            "Lutte": 5,
+            "Lutte libre": 5
+          }
+        },
+        {
+          "text": "Les deux",
+          "value": {
+            "Boxe anglaise": 4,
+            "Boxe française (Savate)": 5,
+            "Capoeira": 5,
+            "Jiu-Jitsu Brésilien": 5,
+            "Judo": 5,
+            "Karate": 5,
+            "Krav Maga": 5,
+            "Kung Fu": 5,
+            "MMA": 5,
+            "Sambo": 5
+          }
+        },
+        {
+          "text": "Sans contact",
+          "value": {
+            "Capoeira": 5,
+            "Kung Fu": 5
+          }
+        },
+        {
+          "text": "Peu importe",
+          "value": {
+            "Kung Fu": 5
+          }
+        }
+      ]
+    },
+    {
+      "text": "Quel type de percussion ",
+      "choices": [
+        {
+          "text": "Uniquement les bras",
+          "value": {
+            "Boxe anglaise": 5,
+            "Kung Fu": 5
+          }
+        },
+        {
+          "text": "Principalement les bras",
+          "value": {
+            "Boxe anglaise": 4,
+            "Kajukenbo": 5,
+            "Kali": 5,
+            "Krav Maga": 5,
+            "Kung Fu": 5
+          }
+        },
+        {
+          "text": "Principalement les jambes",
+          "value": {
+            "Kung Fu": 5,
+            "Taekwondo": 5
+          }
+        },
+        {
+          "text": "Bras et jambes",
+          "value": {
+            "Boxe française (Savate)": 5,
+            "Kickboxing": 5,
+            "Kung Fu": 5,
+            "Muay Thai": 5,
+            "Wing Chun": 5
+          }
+        },
+        {
+          "text": "Peu importe",
+          "value": {
+            "Judo": 5,
+            "Karate": 5,
+            "Krav Maga": 55
+          }
+        }
+      ]
+    },
+    {
+      "text": "Quel style de pratique",
+      "choices": [
+        {
+          "text": "Traditionnelle",
+          "value": {
+            "Capoeira": 5,
+            "Jiu-Jitsu Brésilien": 5,
+            "Wing Chun": 5
+          }
+        },
+        {
+          "text": "Moderne",
+          "value": {
+            "Boxe française (Savate)": 5,
+            "Capoeira": 5
+          }
+        },
+        {
+          "text": "Peu importe",
+          "value": {
+            "Boxe anglaise": 5,
+            "Boxe française (Savate)": 5
+          }
+        }
+      ]
+    },
+    {
+      "text": "Engagement",
+      "choices": [
+        {
+          "text": "1 séance par semaine",
+          "value": {
+            "Boxe anglaise": 5
+          }
+        },
+        {
+          "text": "2 à 3 séances par semaine",
+          "value": {}
+        },
+        {
+          "text": "Principalement des stages",
+          "value": {
+            "Boxe anglaise": 4,
+            "Boxe française (Savate)": 5,
+            "Capoeira": 6,
+            "Jiu-Jitsu Brésilien": 5
+          }
+        }
+      ]
+    },
+    {
+      "text": "Investissement financier",
+      "choices": [
+        {
+          "text": "Faible",
+          "value": {
+            "Capoeira": 6,
+            "Jiu-Jitsu Brésilien": 6,
+            "Judo": 6,
+            "Karate": 6
+          }
+        },
+        {
+          "text": "Modéré",
+          "value": {
+            "Karate": 6,
+            "Krav Maga": 6
+          }
+        },
+        {
+          "text": "Elevé",
+          "value": {
+            "Krav Maga": 6
+          }
+        }
+      ]
+    }
+  ]
+}

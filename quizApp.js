@@ -2,40 +2,34 @@ function quizApp() {
   return {
     welcome: true,
     step: 1,
-    answers: Array(10).fill(null),
     showResult: false,
     recommendedSports: [],
     questions: [],
+    scores: {},
+    selectedValues: {},
     fetchData() {
-      fetch('data.json')
+      fetch('./data/data.json')
         .then(response => response.json())
-        .then(data => this.questions = data.questions);
+        .then(data => this.questions = data.questions)
+        .catch(error => console.error('Error:', error));
     },
     nextStep() {
       if (this.step < this.questions.length) {
         this.step++;
       }
     },
-    calculateScores() {
-      const scores = {
-        aikido: 0,
-        muayThai: 0,
-        kendo: 0,
-        jiuJitsu: 0,
-        kravMaga: 0,
-        karate: 0,
-        boxing: 0,
-        taiChi: 0
-      };
-
-      this.answers.forEach(answer => {
-        for (const [key, value] of Object.entries(answer)) {
-          scores[key] += value;
+    updateScores(index) {
+      Object.keys(this.selectedValues[index]).forEach(sport => {
+        if (!this.scores[sport]) {
+          this.scores[sport] = 0;
         }
+        this.scores[sport] += this.selectedValues[index][sport];
       });
-
-      const maxScore = Math.max(...Object.values(scores));
-      this.recommendedSports = Object.keys(scores).filter(sport => scores[sport] === maxScore);
+      this.nextStep();
+    },
+    calculateWinner() {
+      const maxScore = Math.max(...Object.values(this.scores));
+      this.recommendedSports = Object.keys(this.scores).filter(sport => this.scores[sport] === maxScore);
 
       this.showResult = true;
     }
